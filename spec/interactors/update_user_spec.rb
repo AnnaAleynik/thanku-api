@@ -8,7 +8,15 @@ describe UpdateUser do
     let(:initial_context) { { user: user, user_params: user_params } }
 
     context "with valid data" do
-      let(:user_params) { { email: "dent@gmail.com", first_name: "Arthur", last_name: "Dent" } }
+      let(:user_params) do
+        {
+          email: "dent@gmail.com",
+          first_name: "Arthur",
+          last_name: "Dent",
+          login: "Login",
+          birthdate: "2013-06-13"
+        }
+      end
       let(:user_id) { user.id }
       let(:event) { :user_updated }
 
@@ -20,7 +28,9 @@ describe UpdateUser do
         expect(user).to have_attributes(
           email: "dent@gmail.com",
           first_name: "Arthur",
-          last_name: "Dent"
+          last_name: "Dent",
+          login: "Login",
+          birthdate: Date.strptime("2013-06-13")
         )
       end
 
@@ -45,6 +55,18 @@ describe UpdateUser do
         {
           message: "Record Invalid",
           detail: ["Current password is incorrect", "Current password can't be blank"]
+        }
+      end
+
+      it_behaves_like "failed interactor"
+    end
+
+    context "when data is invalid" do
+      let(:user_params) { { login: "l" } }
+      let(:error_data) do
+        {
+          message: "Record Invalid",
+          detail: ["Login is too short (minimum is 3 characters)"]
         }
       end
 

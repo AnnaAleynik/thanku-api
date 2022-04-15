@@ -5,7 +5,7 @@ module Types
     argument :first_name, String, required: true
     argument :last_name, String, required: true
 
-    argument :login, String, required: false
+    argument :login, String, required: true
 
     argument :avatar, Types::ImageUploaderType, required: false
   end

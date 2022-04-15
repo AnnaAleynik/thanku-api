@@ -1,5 +1,5 @@
 class UpdateUserForm < ApplicationForm
-  USER_ATTRIBUTES = %i[first_name last_name email password avatar].freeze
+  USER_ATTRIBUTES = %i[first_name last_name email password avatar login birthdate].freeze
   ATTRIBUTES = (USER_ATTRIBUTES + %i[current_password]).freeze
 
   attr_accessor(*ATTRIBUTES)
@@ -8,6 +8,7 @@ class UpdateUserForm < ApplicationForm
   validates :current_password, existing_password: true, presence: true, unless: -> { password.blank? }
   validates :password, length: { maximum: ActiveModel::SecurePassword::MAX_PASSWORD_LENGTH_ALLOWED },
                        allow_nil: true, allow_blank: true
+  validates :login, length: { minimum: 3 }, allow_nil: true
 
   def attribute_names
     @attribute_names ||= ATTRIBUTES

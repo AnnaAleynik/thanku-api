@@ -38,10 +38,10 @@ end
 group :development, :test do
   gem "brakeman"
   gem "bundler-audit"
-  gem "byebug"
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "ffaker"
+  gem "pry"
   gem "rspec-rails"
   gem "rubocop", require: false
   gem "rubocop-rails", require: false

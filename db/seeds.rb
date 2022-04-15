@@ -1,7 +1,13 @@
 Activity.destroy_all
 User.destroy_all
 
-john_doe = User.create!(email: "john.doe@example.com", first_name: "John", last_name: "Doe", password: "123456")
+john_doe = User.create!(
+  email: "john.doe@example.com",
+  first_name: "John",
+  last_name: "Doe",
+  password: "123456",
+  login: "john.doe"
+)
 Activity.create!(
   user: john_doe,
   title: "User registered",
@@ -13,7 +19,8 @@ darth_vader = User.create!(
   email: "darth.vader@example.com",
   first_name: "Darth",
   last_name: "Vader",
-  password: "123456"
+  password: "123456",
+  login: "star_war"
 )
 Activity.create!(
   user: darth_vader,

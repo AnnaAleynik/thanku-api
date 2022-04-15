@@ -20,6 +20,9 @@ describe Mutations::SignUp do
           input: {
             email: "#{email}",
             password: "TheRing",
+            firstName: "John",
+            lastName: "Smith",
+            login: "login",
             avatar: {
               id: "#{avatar_id}",
               metadata: {
@@ -32,6 +35,9 @@ describe Mutations::SignUp do
         ) {
           me {
             id
+            login
+            firstName
+            lastName
             email
             avatarUrl
           }
