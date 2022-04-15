@@ -22,6 +22,9 @@ Rails/UnknownEnv:
     - test
     - staging
 
+Rails/DeprecatedActiveModelErrorsMethods:
+  Enabled: false
+
 Rails/HasManyOrHasOneDependent:
   Enabled: true
 
@@ -34,7 +37,13 @@ Rails/HasAndBelongsToMany:
 Rails/OutputSafety:
   Enabled: false
 
+RSpec/FilePath:
+  Enabled: false
+
 RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
 RSpec/ExampleLength:
