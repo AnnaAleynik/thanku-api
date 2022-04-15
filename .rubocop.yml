@@ -34,7 +34,13 @@ Rails/HasAndBelongsToMany:
 Rails/OutputSafety:
   Enabled: false
 
+RSpec/FilePath:
+  Enabled: false
+
 RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
 RSpec/ExampleLength:
