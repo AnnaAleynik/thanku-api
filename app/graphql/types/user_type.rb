@@ -5,6 +5,7 @@ module Types
     field :first_name, String, null: true
     field :last_name, String, null: true
     field :avatar_url, String, null: true
+    field :login, String, null: false
 
     delegate :avatar, to: :object
     delegate :url, to: :avatar, prefix: true, allow_nil: true
