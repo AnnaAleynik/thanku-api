@@ -6,7 +6,9 @@ john_doe = User.create!(
   first_name: "John",
   last_name: "Doe",
   password: "123456",
-  login: "john.doe"
+  login: "john.doe",
+  bonus_allowance: 500,
+  bonus_balance: 500
 )
 Activity.create!(
   user: john_doe,
@@ -20,7 +22,9 @@ darth_vader = User.create!(
   first_name: "Darth",
   last_name: "Vader",
   password: "123456",
-  login: "star_war"
+  login: "star_war",
+  bonus_allowance: 500,
+  bonus_balance: 500
 )
 Activity.create!(
   user: darth_vader,

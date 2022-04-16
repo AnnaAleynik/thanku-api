@@ -40,6 +40,8 @@ describe Mutations::SignUp do
             lastName
             email
             avatarUrl
+            bonusBalance
+            bonusAllowance
           }
           accessToken
           refreshToken

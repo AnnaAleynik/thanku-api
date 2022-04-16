@@ -10,7 +10,7 @@ module Types
     field :login, String, null: false
     field :role, String, null: false
     field :bonus_balance, Int, null: false
-    field :wallet, Int, null: false
+    field :bonus_allowance, Int, null: false
 
     field :activities, resolver: Resolvers::Activities, connection: true
 

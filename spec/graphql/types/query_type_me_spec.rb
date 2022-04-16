@@ -18,6 +18,8 @@ describe Types::QueryType do
           login
           role
           birthdate
+          bonusAllowance
+          bonusBalance
         }
       }
     GRAPHQL

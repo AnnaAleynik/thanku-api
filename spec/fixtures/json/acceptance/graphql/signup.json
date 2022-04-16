@@ -7,7 +7,9 @@
         "avatarUrl": ":avatar_url",
         "firstName": "John",
         "lastName": "Smith",
-        "login": "login"
+        "login": "login",
+        "bonusBalance": 0,
+        "bonusAllowance": 500
       },
       "accessToken": ":accessToken",
       "refreshToken": ":refreshToken"

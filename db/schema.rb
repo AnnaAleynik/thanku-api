@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_04_15_123419) do
     t.datetime "confirmed_at"
     t.string "login"
     t.integer "bonus_balance", default: 0, null: false
-    t.integer "wallet", default: 500, null: false
+    t.integer "bonus_allowance", default: 500, null: false
     t.string "role", default: "account", null: false
     t.date "birthdate"
     t.bigint "company_id"
