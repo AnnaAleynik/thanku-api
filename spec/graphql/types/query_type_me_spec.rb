@@ -1,6 +1,8 @@
 require "rails_helper"
 
 describe Types::QueryType do
+  include_context "when time is frozen"
+
   let!(:user) { create :user, :with_data }
   let(:token_payload) { { type: "access" } }
   let!(:activity) { create :activity, user: user, event: :user_updated }
@@ -13,6 +15,11 @@ describe Types::QueryType do
           email
           firstName
           lastName
+          login
+          role
+          birthdate
+          bonusAllowance
+          bonusBalance
         }
       }
     GRAPHQL

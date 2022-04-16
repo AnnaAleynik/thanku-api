@@ -6,6 +6,11 @@ module Types
     field :last_name, String, null: true
     field :avatar_url, String, null: true
     field :confirmed_at, GraphQL::Types::ISO8601DateTime, null: true
+    field :birthdate, GraphQL::Types::ISO8601Date, null: true
+    field :login, String, null: false
+    field :role, String, null: false
+    field :bonus_balance, Int, null: false
+    field :bonus_allowance, Int, null: false
 
     field :activities, resolver: Resolvers::Activities, connection: true
 

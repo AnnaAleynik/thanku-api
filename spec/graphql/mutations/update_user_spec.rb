@@ -18,6 +18,8 @@ describe Mutations::UpdateUser do
             lastName: "McMurphy",
             currentPassword: "123456",
             password: "qwerty",
+            login: "login",
+            birthdate: "2001-07-09"
             avatar: {
               id: "#{avatar_id}",
               metadata: {
@@ -31,8 +33,10 @@ describe Mutations::UpdateUser do
           me {
             id
             email
+            login
             firstName
             lastName
+            birthdate
             avatarUrl
           }
         }

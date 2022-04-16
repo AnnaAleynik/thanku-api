@@ -1,10 +1,15 @@
 {
   "data": {
     "me": {
+      "birthdate": "1999-05-10",
       "id": ":id",
       "email": ":email",
       "firstName": ":first_name",
-      "lastName": ":last_name"
+      "lastName": ":last_name",
+      "login": "Adam.Serwer",
+      "role": "account",
+      "bonusBalance": 230,
+      "bonusAllowance": 500
     }
   }
 }

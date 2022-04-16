@@ -10,7 +10,8 @@ describe CreateUser do
       let(:user_params) do
         {
           email: "user@example.com", password: "password",
-          first_name: "Bilbo", last_name: "Baggings"
+          first_name: "Bilbo", last_name: "Baggings",
+          login: "login"
         }
       end
 
@@ -24,7 +25,8 @@ describe CreateUser do
           email: "user@example.com",
           password: "password",
           first_name: "Bilbo",
-          last_name: "Baggings"
+          last_name: "Baggings",
+          login: "login"
         )
       end
     end

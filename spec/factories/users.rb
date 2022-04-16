@@ -3,7 +3,10 @@ FactoryBot.define do
     email { generate(:user_email) }
     password { "password" }
     first_name { FFaker::Name.first_name }
-    last_name  { FFaker::Name.first_name }
+    last_name  { FFaker::Name.last_name }
+    login { "#{first_name}.#{last_name}" }
+    bonus_allowance { 500 }
+    bonus_balance { 230 }
 
     trait :with_reset_token do
       password_reset_token { "reset_token" }
@@ -14,6 +17,7 @@ FactoryBot.define do
       email { "adam@serwer.com" }
       first_name { "Adam" }
       last_name { "Serwer" }
+      birthdate { 21.years.ago }
     end
   end
 end

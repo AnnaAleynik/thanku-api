@@ -39,7 +39,3 @@ please make sure that:
 
 Notes regarding deployment the contained body of work.
 These should note any db migrations, ENV variables, services, scripts, etc.
-
-### References
-* Resolves #### Issue
-* [GitHub Pull Request ####](https://github.com/fs/rails-base-graphql-api/pull/####)

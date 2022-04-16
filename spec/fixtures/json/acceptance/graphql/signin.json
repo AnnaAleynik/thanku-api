@@ -5,7 +5,9 @@
       "refreshToken": ":refreshToken",
       "me": {
         "id": "111111",
-        "email": "bilbo.baggins@shire.com"
+        "email": "bilbo.baggins@shire.com",
+        "bonusBalance": 230,
+        "bonusAllowance": 500
       }
     }
   }

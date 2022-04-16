@@ -15,6 +15,8 @@ describe Mutations::SignIn do
           me {
             id
             email
+            bonusAllowance
+            bonusBalance
           }
           refreshToken
           accessToken
