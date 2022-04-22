@@ -1,9 +1,11 @@
-class CreateUser
+class CreateOwner
   include Interactor
 
-  delegate :user_params, to: :context
+  delegate :user_params, :company, to: :context
 
   def call
+    user_params.merge!(role: "owner", company: company)
+
     context.user = User.new(user_params)
 
     context.fail!(error_data: error_data) unless context.user.save

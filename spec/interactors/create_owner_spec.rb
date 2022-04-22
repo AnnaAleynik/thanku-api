@@ -1,9 +1,10 @@
 require "rails_helper"
 
-describe CreateUser do
+describe CreateOwner do
   include_context "with interactor"
 
-  let(:initial_context) { { user_params: user_params } }
+  let(:initial_context) { { user_params: user_params, company: company } }
+  let(:company) { create :company }
 
   describe ".call" do
     context "with valid data" do
@@ -26,7 +27,9 @@ describe CreateUser do
           password: "password",
           first_name: "Bilbo",
           last_name: "Baggings",
-          login: "login"
+          login: "login",
+          role: "owner",
+          company_id: company.id
         )
       end
     end

@@ -1,6 +1,12 @@
 Activity.destroy_all
 User.destroy_all
 
+company = Company.create!(
+  name: "SuperTeam",
+  description: "The best team thanks жцрпо",
+  bonus_amount: 500
+)
+
 john_doe = User.create!(
   email: "john.doe@example.com",
   first_name: "John",
@@ -8,7 +14,9 @@ john_doe = User.create!(
   password: "123456",
   login: "john.doe",
   bonus_allowance: 500,
-  bonus_balance: 500
+  bonus_balance: 500,
+  role: "owner",
+  company: company
 )
 Activity.create!(
   user: john_doe,
@@ -24,7 +32,9 @@ darth_vader = User.create!(
   password: "123456",
   login: "star_war",
   bonus_allowance: 500,
-  bonus_balance: 500
+  bonus_balance: 500,
+  role: "employee",
+  company: company
 )
 Activity.create!(
   user: darth_vader,

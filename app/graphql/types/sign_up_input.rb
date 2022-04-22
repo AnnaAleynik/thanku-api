@@ -4,7 +4,6 @@ module Types
     argument :password, String, required: true
     argument :first_name, String, required: true
     argument :last_name, String, required: true
-
     argument :login, String, required: true
 
     argument :avatar, Types::ImageUploaderType, required: false
