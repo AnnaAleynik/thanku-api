@@ -12,7 +12,11 @@
         "bonusAllowance": 500
       },
       "accessToken": ":accessToken",
-      "refreshToken": ":refreshToken"
+      "refreshToken": ":refreshToken",
+      "company": {
+        "id": ":company_id",
+        "name": "Company"
+      }
     }
   }
 }

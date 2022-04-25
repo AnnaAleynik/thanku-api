@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :user do
-    email { generate(:user_email) }
+    company
+    email { "user_#{SecureRandom.base64(12)}@example.com" }
     password { "password" }
     first_name { FFaker::Name.first_name }
     last_name  { FFaker::Name.last_name }
@@ -18,6 +19,13 @@ FactoryBot.define do
       first_name { "Adam" }
       last_name { "Serwer" }
       birthdate { 21.years.ago }
+    end
+
+    trait :owner do
+      email { "sherlock@holmes.com" }
+      first_name { "Sherlock" }
+      last_name { "Holmes" }
+      role { "owner" }
     end
   end
 end
