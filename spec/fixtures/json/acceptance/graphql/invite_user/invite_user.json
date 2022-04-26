@@ -1,0 +1,12 @@
+{
+  "data": {
+    "inviteUser": {
+      "invitedUser": {
+        "id": ":id",
+        "email": "bilbo.baggins@shire.com",
+        "firstName": "Wolfgang Amadeus",
+        "lastName": "Mozart"
+      }
+    }
+  }
+}

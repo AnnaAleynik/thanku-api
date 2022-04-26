@@ -10,5 +10,6 @@ module Types
     field :update_password, mutation: Mutations::UpdatePassword
     field :confirm_user, mutation: Mutations::ConfirmUser
     field :omniauth_signin_or_signup, mutation: Mutations::OmniauthSignInOrSignUp
+    field :invite_user, mutation: Mutations::InviteUser
   end
 end

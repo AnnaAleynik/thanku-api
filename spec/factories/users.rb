@@ -27,5 +27,18 @@ FactoryBot.define do
       last_name { "Holmes" }
       role { "owner" }
     end
+
+    trait :invited_not_accepted do
+      email { "invited@example.com" }
+      invitation_token { "invitation_token" }
+      bonus_balance { 0 }
+    end
+
+    trait :employee do
+      email { "johann_sebastian@bach.com" }
+      first_name { "Johann Sebastian" }
+      last_name { "Bach" }
+      role { "employee" }
+    end
   end
 end
