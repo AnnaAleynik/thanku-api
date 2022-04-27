@@ -1,0 +1,19 @@
+{
+  "data": {
+    "inviteUser": null
+  },
+  "errors": [
+    {
+      "extensions": {
+        "status": 403,
+        "code": "unauthorized",
+        "detail": {}
+      },
+      "locations": [
+        { "line": 2, "column": 9 }
+      ],
+      "path": ["inviteUser"],
+      "message": "You are not authorized to perform this action"
+    }
+  ]
+}
