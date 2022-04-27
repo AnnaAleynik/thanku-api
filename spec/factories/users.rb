@@ -29,6 +29,7 @@ FactoryBot.define do
     end
 
     trait :invited_not_accepted do
+      login { nil }
       email { "invited@example.com" }
       invitation_token { "invitation_token" }
       bonus_balance { 0 }

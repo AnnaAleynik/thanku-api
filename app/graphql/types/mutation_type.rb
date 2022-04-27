@@ -11,5 +11,6 @@ module Types
     field :confirm_user, mutation: Mutations::ConfirmUser
     field :omniauth_signin_or_signup, mutation: Mutations::OmniauthSignInOrSignUp
     field :invite_user, mutation: Mutations::InviteUser
+    field :accept_invitation, mutation: Mutations::AcceptInvitation
   end
 end
