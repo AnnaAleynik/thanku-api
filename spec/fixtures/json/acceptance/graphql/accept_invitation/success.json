@@ -1,0 +1,12 @@
+{
+  "data": {
+    "acceptInvitation": {
+      "me": {
+        "id": ":id",
+        "email": "invited@example.com",
+        "login": "Login",
+        "birthdate": "2006-05-30"
+      }
+    }
+  }
+}

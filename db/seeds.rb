@@ -7,7 +7,7 @@ company = Company.create!(
   bonus_amount: 500
 )
 
-john_doe = User.create!(
+owner = User.create!(
   email: "john.doe@example.com",
   first_name: "John",
   last_name: "Doe",
@@ -19,7 +19,7 @@ john_doe = User.create!(
   company: company
 )
 Activity.create!(
-  user: john_doe,
+  user: owner,
   title: "User registered",
   body: "New user registered with the next attributes: First Name - John, Last Name - Doe",
   event: :user_registered
@@ -34,6 +34,7 @@ darth_vader = User.create!(
   bonus_allowance: 500,
   bonus_balance: 500,
   role: "employee",
+  invited_by: owner,
   company: company
 )
 Activity.create!(

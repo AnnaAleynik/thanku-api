@@ -24,7 +24,9 @@ describe Mutations::PresignData do
 
   context "with valid file type" do
     let(:file_type) { "image/png" }
+    # rubocop:disable RSpec/VerifiedDoubleReference
     let(:s3_storage) { instance_double("S3Storage", presign: presign_data) }
+    # rubocop:enable RSpec/VerifiedDoubleReference
     let(:presign_data) { { url: "http://some-url.com", fields: { key: :value } } }
 
     before do

@@ -1,0 +1,19 @@
+{
+  "data": {
+    "acceptInvitation": null
+  },
+  "errors": [
+    {
+      "message": "Invalid token",
+      "extensions": {
+        "status": 400,
+        "code": "bad_request",
+        "detail": null
+      },
+      "locations": [
+        { "line": 2, "column": 9 }
+      ],
+      "path": ["acceptInvitation"]
+    }
+  ]
+}

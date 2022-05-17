@@ -21,4 +21,15 @@ class ApplicationMailer < ActionMailer::Base
 
     mail(to: @user.email)
   end
+
+  def invite_user(user)
+    @user = user
+    @company_name = user.company.name
+    @accept_link = format(
+      ENV.fetch("ACCEPT_INVITATION_LINK_TENPLATE"),
+      token_value: user.invitation_token
+    )
+
+    mail(to: user)
+  end
 end

@@ -86,6 +86,9 @@ Style/EmptyMethod:
     - compact
     - expanded
 
+Style/FetchEnvVar:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
