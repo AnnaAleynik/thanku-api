@@ -8,6 +8,7 @@ gem "rails", "~> 6.0.4.7"
 
 # all other gems
 gem "action_policy-graphql"
+gem 'activerecord-import'
 gem "aws-sdk-s3"
 gem "bcrypt"
 gem "bootsnap", require: false

@@ -4,7 +4,13 @@ module AuthenticableUser
   def current_user
     return unless token && payload && active_refresh_token?
 
-    User.find_by(id: payload["sub"])
+    @current_user ||= User.find_by(id: payload["sub"])
+  end
+
+  def current_company
+    return unless current_user
+
+    current_user.company
   end
 
   def token

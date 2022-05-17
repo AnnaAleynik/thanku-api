@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_22_111708) do
+ActiveRecord::Schema.define(version: 2022_04_28_074939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2022_04_22_111708) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "bonus_amount", default: 100, null: false
+  end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_hashtags_on_company_id"
   end
 
   create_table "possession_tokens", force: :cascade do |t|
@@ -77,6 +85,7 @@ ActiveRecord::Schema.define(version: 2022_04_22_111708) do
   end
 
   add_foreign_key "activities", "users"
+  add_foreign_key "hashtags", "companies"
   add_foreign_key "possession_tokens", "users"
   add_foreign_key "refresh_tokens", "users"
   add_foreign_key "users", "companies"
