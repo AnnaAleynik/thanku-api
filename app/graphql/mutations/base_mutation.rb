@@ -1,6 +1,7 @@
 module Mutations
   class BaseMutation < GraphQL::Schema::Mutation
     include ExecutionErrorResponder
+    include ActionPolicy::GraphQL::Behaviour
 
     argument_class Types::BaseArgument
     field_class Types::BaseField
@@ -10,6 +11,10 @@ module Mutations
 
     def current_user
       context[:current_user]
+    end
+
+    def current_company
+      context[:current_company]
     end
 
     def token

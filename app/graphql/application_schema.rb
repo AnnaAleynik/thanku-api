@@ -11,4 +11,15 @@ class ApplicationSchema < GraphQL::Schema
     raise GraphQL::ExecutionError.new("#{field.type.unwrap.graphql_name} not found",
                                       extensions: { message: "Not Found", status: 404, code: :not_found })
   end
+
+  rescue_from(ActionPolicy::Unauthorized) do |exp|
+    raise GraphQL::ExecutionError.new(
+      exp.result.message,
+      extensions: {
+        code: :unauthorized,
+        status: 403,
+        detail: exp.result.reasons.details
+      }
+    )
+  end
 end
