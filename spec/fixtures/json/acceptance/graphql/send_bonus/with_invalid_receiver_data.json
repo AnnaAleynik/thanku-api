@@ -1,0 +1,21 @@
+{
+  "data": {
+    "sendBonus": null
+  },
+  "errors": [
+    {
+      "message": "Record Invalid",
+      "extensions": {
+        "status": 422,
+        "code": "bad_request",
+        "detail": [
+          "Receiver can't get a bonus from yourself"
+        ]
+      },
+      "locations": [
+        { "line": 2, "column": 9 }
+      ],
+      "path": ["sendBonus"]
+    }
+  ]
+}

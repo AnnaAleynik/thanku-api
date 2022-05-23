@@ -35,7 +35,14 @@ FactoryBot.define do
       bonus_balance { 0 }
     end
 
-    trait :employee do
+    factory :employee do
+      email { "ludwig_beethoven@bach.com" }
+      first_name { "Ludwig van" }
+      last_name { "Beethoven" }
+      role { "employee" }
+    end
+
+    factory :johann_sebastian_employee do
       email { "johann_sebastian@bach.com" }
       first_name { "Johann Sebastian" }
       last_name { "Bach" }
