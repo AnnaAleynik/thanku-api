@@ -32,4 +32,13 @@ class ApplicationMailer < ActionMailer::Base
 
     mail(to: user)
   end
+
+  def bonus_received(bonus_transfer)
+    @receiver = bonus_transfer.receiver
+    @sender = bonus_transfer.sender
+    @amount = bonus_transfer.amount
+    @comment = bonus_transfer.comment
+
+    mail(to: @receiver.mail)
+  end
 end

@@ -1,0 +1,10 @@
+<h1>Invitation at ThankU</h1>
+
+<p>Hello, <%= @user.first_name %> <%= @user.last_name %>.</p>
+
+<p>
+  You've been invited to company <%= @company_name %> at ThankU!
+</p>
+<p>
+  Follow <%= link_to "this link", @accept_link %> to accept invitation.
+</p>

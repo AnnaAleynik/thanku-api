@@ -1,0 +1,20 @@
+{
+  "data": {
+    "sendBonus" : {
+      "bonusTransfer": {
+        "id": ":id",
+        "amount": 10,
+        "comment": "#win-win-win ThankU for help!",
+        "parentId": null,
+        "receiver": {
+          "firstName": "Johann Sebastian",
+          "id": "123123"
+        },
+        "sender": {
+          "firstName": "Ludwig van",
+          "id": ":sender_id"
+        }
+      }
+    }
+  }
+}

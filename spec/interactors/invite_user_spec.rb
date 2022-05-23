@@ -60,7 +60,7 @@ describe InviteUser do
   describe "#after" do
     let(:company) { create :company }
     let(:user_id) { 223_445 }
-    let(:user) { create :user, :employee, :invited_not_accepted, id: user_id, company: company }
+    let(:user) { create :johann_sebastian_employee, :invited_not_accepted, id: user_id, company: company }
     let(:initial_context) { { user: user, company: company } }
     let(:event) { :user_invited }
 

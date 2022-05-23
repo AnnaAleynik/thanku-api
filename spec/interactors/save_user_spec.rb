@@ -5,7 +5,7 @@ describe SaveUser do
     include_context "with interactor"
 
     let(:user) do
-      build :user, :employee, :invited_not_accepted,
+      build :johann_sebastian_employee, :invited_not_accepted,
             invited_by: current_user, first_name: first_name, company: company
     end
     let(:initial_context) { { user: user } }
