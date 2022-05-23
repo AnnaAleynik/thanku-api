@@ -14,5 +14,7 @@ module Types
     field :accept_invitation, mutation: Mutations::AcceptInvitation
     field :send_bonus, mutation: Mutations::SendBonus
     field :create_product, mutation: Mutations::CreateProduct
+    field :update_product, mutation: Mutations::UpdateProduct
+    field :destroy_product, mutation: Mutations::DestroyProduct
   end
 end

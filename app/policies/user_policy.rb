@@ -1,5 +1,5 @@
 class UserPolicy < ApplicationPolicy
-  def create_product?
+  def manage_product?
     user.owner? || user.manager?
   end
 end

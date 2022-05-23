@@ -1,10 +1,11 @@
 module Mutations
-  class CreateProduct < BaseMutation
+  class UpdateProduct < BaseMutation
     include AuthenticableGraphqlUser
 
-    argument :count, Int, required: true
-    argument :price, Int, required: true
-    argument :name, String, required: true
+    argument :id, required: true
+    argument :count, Int, required: false
+    argument :price, Int, required: false
+    argument :name, String, required: false
     argument :description, String, required: false
     argument :picture, Types::ImageUploaderType, required: false
 
@@ -13,12 +14,12 @@ module Mutations
     def resolve(**params)
       authorize! current_user, to: :manage_product?, with: ::UserPolicy
 
-      create_product = ::Products::Create.call(
+      update_product = ::Products::Update.call(
         product_params: params,
         current_user: current_user
       )
 
-      create_product.success? ? create_product : execution_error(error_data: create_product.error_data)
+      update_product.success? ? update_product : execution_error(error_data: update_product.error_data)
     end
   end
 end
