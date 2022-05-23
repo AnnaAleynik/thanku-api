@@ -1,0 +1,19 @@
+{
+  "data": {
+    "createProduct": null
+  },
+  "errors": [
+    {
+      "extensions": {
+        "status": 403,
+        "code": "unauthorized",
+        "detail": {}
+      },
+      "locations": [
+        { "line": 2, "column": 9 }
+      ],
+      "path": ["createProduct"],
+      "message": "You are not authorized to perform this action"
+    }
+  ]
+}

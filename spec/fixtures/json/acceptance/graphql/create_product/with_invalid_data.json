@@ -1,0 +1,21 @@
+{
+  "data": {
+    "createProduct": null
+  },
+  "errors": [
+    {
+      "message": "Record Invalid",
+      "extensions": {
+        "status": 422,
+        "code": "unprocessable_entity",
+        "detail": [
+          "Count must be greater than or equal to 0"
+        ]
+      },
+      "locations": [
+        { "line": 2, "column": 9 }
+      ],
+      "path": ["createProduct"]
+    }
+  ]
+}
