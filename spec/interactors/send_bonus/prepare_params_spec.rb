@@ -11,7 +11,7 @@ describe SendBonus::PrepareParams do
         parent_id: nil,
         comment: "#win-win-win ThankU for help!"
       },
-      current_user: current_user,
+      current_user: current_user
     }
   end
   let(:current_user) { create :employee }

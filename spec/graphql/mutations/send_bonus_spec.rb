@@ -45,6 +45,14 @@ describe Mutations::SendBonus do
   context "with valid data" do
     it_behaves_like "graphql request", "invite a new user" do
       let(:fixture_path) { "json/acceptance/graphql/send_bonus/with_valid_data.json" }
+
+      let(:prepared_fixture_file) do
+        fixture_file.gsub(
+          /:id|:sender_id/,
+          ":id" => bonus_transfer.id,
+          ":sender_id" => current_user.id
+        )
+      end
     end
   end
 

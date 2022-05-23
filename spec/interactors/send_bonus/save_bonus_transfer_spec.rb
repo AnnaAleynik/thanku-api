@@ -9,7 +9,7 @@ describe SendBonus::SaveBonusTransfer do
     }
   end
   let(:current_user) { create :employee }
-  let!(:receiver) { create :johann_sebastian_employee}
+  let!(:receiver) { create :johann_sebastian_employee }
   let(:bonus_transfer) do
     build :bonus_transfer, amount: 10, comment: comment, sender: current_user,
                            receiver: receiver

@@ -2,7 +2,7 @@
   "data": {
     "sendBonus" : {
       "bonusTransfer": {
-        "id": "1",
+        "id": ":id",
         "amount": 10,
         "comment": "#win-win-win ThankU for help!",
         "parentId": null,
@@ -12,7 +12,7 @@
         },
         "sender": {
           "firstName": "Ludwig van",
-          "id": "1"
+          "id": ":sender_id"
         }
       }
     }
