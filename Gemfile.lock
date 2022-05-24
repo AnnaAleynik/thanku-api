@@ -199,7 +199,7 @@ GEM
     n_plus_one_control (0.6.2)
     newrelic_rpm (8.6.0)
     nio4r (2.5.8)
-    nokogiri (1.13.4)
+    nokogiri (1.13.6)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     open-uri (0.2.0)
