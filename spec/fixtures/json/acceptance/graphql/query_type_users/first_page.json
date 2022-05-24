@@ -1,0 +1,20 @@
+{
+  "data": {
+    "users": {
+      "edges": [{
+        "cursor": "MQ",
+        "node": {
+          "email": "johann_sebastian@bach.com",
+          "firstName": "Johann Sebastian",
+          "lastName": "Bach"
+        }
+      }],
+      "pageInfo": {
+        "endCursor": "MQ",
+        "hasNextPage": true,
+        "hasPreviousPage": false,
+        "startCursor": "MQ"
+      }
+    }
+  }
+}

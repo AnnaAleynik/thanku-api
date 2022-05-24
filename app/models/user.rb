@@ -22,4 +22,6 @@ class User < ApplicationRecord
   validates :login, :invitation_token, uniqueness: true, allow_nil: true
 
   enumerize :role, in: ROLES, predicates: true, default: "account", scope: :shallow
+
+  scope :active, -> { where(invitation_token: nil) }
 end
