@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   has_many :activities, dependent: :destroy
   has_many :refresh_tokens, dependent: :destroy
+  has_many :sended_bonus_transfers, foreign_key: "sender_id"
+  has_many :received_bonus_transfers, foreign_key: "receiver_id"
 
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
