@@ -2,7 +2,7 @@ module Mutations
   class UpdateProduct < BaseMutation
     include AuthenticableGraphqlUser
 
-    argument :id, required: true
+    argument :id, ID, required: true
     argument :count, Int, required: false
     argument :price, Int, required: false
     argument :name, String, required: false

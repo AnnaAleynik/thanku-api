@@ -2,7 +2,7 @@ module Mutations
   class DestroyProduct < BaseMutation
     include AuthenticableGraphqlUser
 
-    argument :id, required: true
+    argument :id, ID, required: true
 
     type Types::Payloads::ProductPayload
 

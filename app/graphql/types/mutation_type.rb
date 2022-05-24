@@ -16,6 +16,5 @@ module Types
     field :create_product, mutation: Mutations::CreateProduct
     field :update_product, mutation: Mutations::UpdateProduct
     field :destroy_product, mutation: Mutations::DestroyProduct
-    # 
   end
 end
