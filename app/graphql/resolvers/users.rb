@@ -1,5 +1,7 @@
 module Resolvers
   class Users < Resolvers::Base
+    include AuthenticableGraphqlUser
+
     type Types::UserType.connection_type, null: true
 
     def fetch_data

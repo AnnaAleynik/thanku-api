@@ -1,0 +1,46 @@
+{
+  "data": {
+    "products": {
+      "edges": [
+        {
+          "cursor": "MQ",
+          "node": {
+            "name": "Sticker pack",
+            "price": 100,
+            "count": 10
+          }
+        },
+        {
+          "cursor": "Mg",
+          "node": {
+            "name": "Labirint Certificate",
+            "price": 500,
+            "count": 2
+          }
+        },
+        {
+          "cursor": "Mw",
+          "node": {
+            "name": "Cap",
+            "price": 700,
+            "count": 8
+          }
+        },
+        {
+          "cursor": "NA",
+          "node": {
+            "name": "T-shirt",
+            "price": 1000,
+            "count": 7
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "NA",
+        "hasNextPage": false,
+        "hasPreviousPage": false,
+        "startCursor": "MQ"
+      }
+    }
+  }
+}
