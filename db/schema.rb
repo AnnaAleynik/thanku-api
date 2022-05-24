@@ -47,14 +47,6 @@ ActiveRecord::Schema.define(version: 2022_05_23_102855) do
     t.integer "bonus_amount", default: 100, null: false
   end
 
-  create_table "hashtags", force: :cascade do |t|
-    t.string "name", null: false
-    t.bigint "company_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["company_id"], name: "index_hashtags_on_company_id"
-  end
-
   create_table "possession_tokens", force: :cascade do |t|
     t.string "value", null: false
     t.bigint "user_id", null: false
@@ -118,7 +110,6 @@ ActiveRecord::Schema.define(version: 2022_05_23_102855) do
   add_foreign_key "bonus_transfers", "bonus_transfers", column: "parent_id"
   add_foreign_key "bonus_transfers", "users", column: "receiver_id"
   add_foreign_key "bonus_transfers", "users", column: "sender_id"
-  add_foreign_key "hashtags", "companies"
   add_foreign_key "possession_tokens", "users"
   add_foreign_key "refresh_tokens", "users"
   add_foreign_key "users", "companies"

@@ -1,0 +1,13 @@
+{
+  "data": {
+    "createProduct" : {
+      "product": {
+        "id": ":id",
+        "name": "T-shirt",
+        "count": 10,
+        "price": 100,
+        "description": null
+      }
+    }
+  }
+}
