@@ -30,7 +30,7 @@ class ApplicationMailer < ActionMailer::Base
       token_value: user.invitation_token
     )
 
-    mail(to: user)
+    mail(to: @user.email)
   end
 
   def bonus_received(bonus_transfer)
@@ -39,6 +39,15 @@ class ApplicationMailer < ActionMailer::Base
     @amount = bonus_transfer.amount
     @comment = bonus_transfer.comment
 
-    mail(to: @receiver.mail)
+    mail(to: @receiver.email)
+  end
+
+  def order_created(order, emails)
+    @order_id = order.id
+    @product_name = order.product.name
+    @quantity = order.quantity
+    @user = order.user
+
+    mail(to: emails)
   end
 end
