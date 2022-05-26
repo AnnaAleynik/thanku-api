@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_23_102855) do
+ActiveRecord::Schema.define(version: 2022_05_24_114134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -45,6 +45,21 @@ ActiveRecord::Schema.define(version: 2022_05_23_102855) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "bonus_amount", default: 100, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "price", null: false
+    t.integer "quantity", null: false
+    t.string "comment"
+    t.string "status", default: "created", null: false
+    t.bigint "product_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "manager_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["manager_id"], name: "index_orders_on_manager_id"
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "possession_tokens", force: :cascade do |t|
@@ -110,6 +125,7 @@ ActiveRecord::Schema.define(version: 2022_05_23_102855) do
   add_foreign_key "bonus_transfers", "bonus_transfers", column: "parent_id"
   add_foreign_key "bonus_transfers", "users", column: "receiver_id"
   add_foreign_key "bonus_transfers", "users", column: "sender_id"
+  add_foreign_key "orders", "users", column: "manager_id"
   add_foreign_key "possession_tokens", "users"
   add_foreign_key "refresh_tokens", "users"
   add_foreign_key "users", "companies"
