@@ -5,6 +5,8 @@ x-app: &app_base
     - db
     - redis
   image: ${IMAGE_NAME}
+  env_file:
+    .env
   environment:
     - DATABASE_URL=postgres://postgres:password@db
     - RAILS_ENV
@@ -13,6 +15,7 @@ x-app: &app_base
     - AUTH_SECRET_TOKEN
     - MAILER_SENDER_ADDRESS
     - PASSWORD_RECOVERY_LINK_TEMPLATE
+    - REDIS_URL
   build:
     context: .
     args:
@@ -53,8 +56,6 @@ services:
     <<: *app_base
     depends_on:
       - app
-    environment:
-      - REDIS_URL
     command: sh -c './bin/wait-for app:3000 -- bundle exec sidekiq'
 
 volumes:
