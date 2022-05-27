@@ -38,7 +38,9 @@ jobs:
         uses: docker/setup-buildx-action@79abd3f86f79a9d68a23c75a09a9a85889262adf
         with:
           build-args:
-            BUNDLER_VERSION=2.1.4
+            BUNDLER_VERSION=2.2.28
+            BUNDLE_WITHOUT="${BUNDLE_WITHOUT}"
+            FOLDERS_TO_REMOVE=""
             
 
       # Login against a Docker registry except on PR
@@ -69,3 +71,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args:
+            BUNDLER_VERSION=2.2.28
+            BUNDLE_WITHOUT="${BUNDLE_WITHOUT}"
+            FOLDERS_TO_REMOVE=""
