@@ -39,8 +39,6 @@ jobs:
         with:
           build-args:
             BUNDLER_VERSION=2.2.28
-            BUNDLE_WITHOUT="${BUNDLE_WITHOUT}"
-            FOLDERS_TO_REMOVE=""
             
 
       # Login against a Docker registry except on PR
@@ -73,5 +71,3 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args:
             BUNDLER_VERSION=2.2.28
-            BUNDLE_WITHOUT=""
-            FOLDERS_TO_REMOVE=""
