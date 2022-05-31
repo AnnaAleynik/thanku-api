@@ -16,6 +16,11 @@ class User < ApplicationRecord
   has_many :sended_bonus_transfers, foreign_key: "sender_id"
   has_many :received_bonus_transfers, foreign_key: "receiver_id"
 
+  has_many :orders, dependent: :destroy
+  has_many :proccesed_orders, class_name: "Order", foreign_key: "manager_id",
+                              dependent: :destroy, inverse_of: "manager"
+  has_many :colleagues, through: :company, source: :users, dependent: :destroy
+
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :bonus_allowance, :bonus_balance, numericality: { only_integer: true, greater_than_or_equal_to: 0 }

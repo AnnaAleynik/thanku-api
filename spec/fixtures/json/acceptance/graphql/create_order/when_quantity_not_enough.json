@@ -1,0 +1,19 @@
+{
+  "data": {
+    "createOrder": null
+  },
+  "errors": [
+    {
+      "message": "We don't have enough products. Try later.",
+      "extensions": {
+        "status": 422,
+        "code": "unprocessable_entity",
+        "detail": null
+      },
+      "locations": [
+        { "line": 2, "column": 9 }
+      ],
+      "path": ["createOrder"]
+    }
+  ]
+}

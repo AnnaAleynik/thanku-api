@@ -1,0 +1,14 @@
+{
+  "data": {
+    "createOrder" : {
+      "order": {
+        "id": ":id",
+        "price": 100,
+        "quantity": 1
+      },
+      "me": {
+        "bonusBalance": 0
+      }
+    }
+  }
+}

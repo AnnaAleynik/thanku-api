@@ -19,11 +19,11 @@ RUN gem install bundler:$BUNDLER_VERSION
 
 WORKDIR /app
 
-# Install gems
-ARG BUNDLE_WITHOUT
-ENV BUNDLE_WITHOUT ${BUNDLE_WITHOUT}
+# # Install gems
+# ARG BUNDLE_WITHOUT
+# ENV BUNDLE_WITHOUT ${BUNDLE_WITHOUT}
 
-RUN bundle config set without ${BUNDLE_WITHOUT}
+# RUN bundle config set without ${BUNDLE_WITHOUT}
 
 COPY . /app/
 RUN bundle install -j4 --retry 3 \
@@ -32,9 +32,9 @@ RUN bundle install -j4 --retry 3 \
  && find /usr/local/bundle/gems/ -name "*.c" -delete \
  && find /usr/local/bundle/gems/ -name "*.o" -delete
 
-# Remove folders not needed in resulting image
-ARG FOLDERS_TO_REMOVE
-RUN rm -rf $FOLDERS_TO_REMOVE
+# # Remove folders not needed in resulting image
+# ARG FOLDERS_TO_REMOVE
+# RUN rm -rf $FOLDERS_TO_REMOVE
 
 ###############################
 # Stage Final

@@ -1,0 +1,19 @@
+{
+  "data": {
+    "createOrder": null
+  },
+  "errors": [
+    {
+      "message": "You don't have enough bonus",
+      "extensions": {
+        "status": 402,
+        "code": "payment_required",
+        "detail": null
+      },
+      "locations": [
+        { "line": 2, "column": 9 }
+      ],
+      "path": ["createOrder"]
+    }
+  ]
+}
