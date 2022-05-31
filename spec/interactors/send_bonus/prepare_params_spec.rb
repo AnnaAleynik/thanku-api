@@ -11,7 +11,8 @@ describe SendBonus::PrepareParams do
         parent_id: nil,
         comment: "#win-win-win ThankU for help!"
       },
-      current_user: current_user
+      current_user: current_user,
+      current_company: current_user.company
     }
   end
   let(:current_user) { create :employee }
@@ -19,7 +20,7 @@ describe SendBonus::PrepareParams do
   describe ".call" do
     context "when data is valid" do
       let(:receiver_id) { 560_560 }
-      let!(:receiver) { create :johann_sebastian_employee, id: 560_560 }
+      let!(:receiver) { create :johann_sebastian_employee, id: 560_560, company: current_user.company }
 
       let(:expected_bonus_transfer_attributes) do
         {

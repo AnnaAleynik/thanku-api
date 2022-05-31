@@ -2,7 +2,7 @@ class SendBonus
   class PrepareParams
     include Interactor
 
-    delegate :bonus_transfer_params, :current_user, to: :context
+    delegate :bonus_transfer_params, :current_user, :current_company, to: :context
 
     def call
       context.amount = bonus_transfer_params[:amount]
@@ -16,11 +16,12 @@ class SendBonus
     def find_parent
       return unless bonus_transfer_params[:parent_id]
 
+      # current_company
       @find_parent ||= BonusTransfer.find(bonus_transfer_params[:parent_id])
     end
 
     def find_receiver
-      context.receiver = find_parent&.receiver || User.find(bonus_transfer_params[:receiver_id])
+      context.receiver = find_parent&.receiver || current_company.users.find(bonus_transfer_params[:receiver_id])
     end
 
     def build_bonus_transfer

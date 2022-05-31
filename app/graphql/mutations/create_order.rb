@@ -12,7 +12,8 @@ module Mutations
     def resolve(**params)
       create_order = ::Orders::Create.call(
         order_params: params,
-        current_user: current_user
+        current_user: current_user,
+        current_company: current_company
       )
 
       create_order.success? ? create_order : execution_error(error_data: create_order.error_data)

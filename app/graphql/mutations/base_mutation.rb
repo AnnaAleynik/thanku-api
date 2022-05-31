@@ -13,6 +13,10 @@ module Mutations
       context[:current_user]
     end
 
+    def current_company
+      context[:current_company]
+    end
+
     def token
       context[:token]
     end
