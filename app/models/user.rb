@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
   has_many :activities, dependent: :destroy
   has_many :refresh_tokens, dependent: :destroy
+  has_many :sended_bonus_transfers, foreign_key: "sender_id", class_name: "BonusTransfer",
+                                    dependent: :nullify, inverse_of: :sender
+  has_many :received_bonus_transfers, foreign_key: "receiver_id", class_name: "BonusTransfer",
+                                      dependent: :nullify, inverse_of: :receiver
 
   has_many :orders, dependent: :destroy
   has_many :proccesed_orders, class_name: "Order", foreign_key: "manager_id",

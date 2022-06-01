@@ -5,13 +5,14 @@ describe Mutations::SendBonus do
   include_context "with mail delivery stubbed"
 
   before do
-    create :johann_sebastian_employee, id: 123_123
+    create :johann_sebastian_employee, id: 123_123, company: current_company
   end
 
-  let(:execution_context) { { context: { current_user: current_user } } }
-  let(:schema_context) { { current_user: current_user } }
+  let(:execution_context) { { context: { current_user: current_user, current_company: current_company } } }
+  let(:schema_context) { { current_user: current_user, current_company: current_company } }
   let(:parent_id) { nil }
   let(:receiver_id) { 123_123 }
+  let(:current_company) { current_user.company }
   let(:current_user) { create :employee, bonus_allowance: 100 }
   let(:bonus_transfer) { BonusTransfer.last }
 

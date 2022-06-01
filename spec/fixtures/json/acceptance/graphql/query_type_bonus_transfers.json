@@ -1,0 +1,53 @@
+{
+  "data": {
+    "bonusTransfers": {
+      "edges": [
+        {
+          "cursor": "MQ",
+          "node": {
+            "sender": {
+              "email": "third@email.com"
+            },
+            "receiver": {
+              "email": "second@email.com"
+            },
+            "comment": "thx",
+            "amount": 1
+          }
+        },
+        {
+          "cursor": "Mg",
+          "node": {
+            "sender": {
+              "email": "third@email.com"
+            },
+            "receiver": {
+              "email": "first@email.com"
+            },
+            "comment": "cool",
+            "amount": 10
+          }
+        },
+        {
+          "cursor": "Mw",
+          "node": {
+            "sender": {
+              "email": "first@email.com"
+            },
+            "receiver": {
+              "email": "second@email.com"
+            },
+            "comment": "win",
+            "amount": 3
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "Mw",
+        "hasNextPage": false,
+        "hasPreviousPage": false,
+        "startCursor": "MQ"
+      }
+    }
+  }
+}

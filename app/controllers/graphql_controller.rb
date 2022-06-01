@@ -23,6 +23,7 @@ class GraphqlController < ApplicationController
   def execution_context
     {
       current_user: current_user,
+      current_company: current_company,
       token: token,
       token_payload: payload,
       extensions: ensure_hash(params[:extensions])

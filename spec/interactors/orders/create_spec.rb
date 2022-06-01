@@ -6,6 +6,7 @@ describe Orders::Create do
 
     let(:initial_context) do
       {
+        current_company: current_company,
         current_user: current_user,
         order_params: {
           product_id: product.id,
@@ -15,8 +16,9 @@ describe Orders::Create do
         }
       }
     end
+    let(:current_company) { current_user.company }
     let(:current_user) { create :user, bonus_balance: 100 }
-    let(:product) { create :product }
+    let(:product) { create :product, company: current_company }
     let(:price) { 20 }
 
     let(:expected_order_attributes) do

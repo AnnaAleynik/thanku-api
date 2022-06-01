@@ -24,6 +24,10 @@ module Resolvers
       @current_user ||= context[:current_user]
     end
 
+    def current_company
+      @current_company ||= context[:current_company]
+    end
+
     def trigger_event
     end
   end

@@ -12,12 +12,14 @@ describe SendBonus do
           parent_id: parent_id,
           receiver_id: receiver_id
         },
-        current_user: current_user
+        current_user: current_user,
+        current_company: current_company
       }
     end
 
     let(:current_user) { create :employee, bonus_allowance: 100 }
-    let!(:receiver) { create :johann_sebastian_employee, id: 560_560, bonus_balance: 100 }
+    let(:current_company) { current_user.company }
+    let!(:receiver) { create :johann_sebastian_employee, id: 560_560, bonus_balance: 100, company: current_company }
     let(:comment) { "#win-win-win ThankU for help!" }
     let(:amount) { 10 }
     let(:receiver_id) { 560_560 }

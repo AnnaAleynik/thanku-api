@@ -1,9 +1,10 @@
 require "rails_helper"
 
 describe Mutations::CreateOrder do
-  let(:execution_context) { { context: { current_user: current_user } } }
-  let(:schema_context) { { current_user: current_user } }
-  let(:product) { create :product, count: 1 }
+  let(:execution_context) { { context: { current_user: current_user, current_company: current_company } } }
+  let(:schema_context) { { current_user: current_user, current_company: current_company } }
+  let(:product) { create :product, count: 1, company: current_company }
+  let(:current_company) { current_user.company }
   let(:current_user) { create :user, bonus_balance: 100 }
   let(:price) { 100 }
   let(:quantity) { 1 }

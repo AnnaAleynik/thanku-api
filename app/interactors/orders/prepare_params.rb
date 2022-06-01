@@ -2,7 +2,7 @@ module Orders
   class PrepareParams
     include Interactor
 
-    delegate :order_params, :current_user, to: :context
+    delegate :order_params, :current_user, :current_company, to: :context
 
     def call
       order_params.merge!(user: current_user)
@@ -13,7 +13,7 @@ module Orders
     private
 
     def product
-      Product.find(order_params[:product_id])
+      current_company.products.find(order_params[:product_id])
     end
 
     def order
