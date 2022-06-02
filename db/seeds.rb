@@ -15,7 +15,7 @@ owner = User.create!(
   login: "john.doe",
   bonus_allowance: 500,
   bonus_balance: 500,
-  role: "owner",
+  role: "manager",
   company: company
 )
 Activity.create!(

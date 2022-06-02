@@ -22,10 +22,17 @@ FactoryBot.define do
     end
 
     trait :owner do
+      email { "sherlock1@holmes.com" }
+      first_name { "Sherlock1" }
+      last_name { "Holmes1" }
+      role { "owner" }
+    end
+
+    trait :manager do
       email { "sherlock@holmes.com" }
       first_name { "Sherlock" }
       last_name { "Holmes" }
-      role { "owner" }
+      role { "manager" }
     end
 
     trait :invited_not_accepted do

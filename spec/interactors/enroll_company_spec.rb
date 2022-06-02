@@ -6,7 +6,7 @@ describe EnrollCompany do
 
     let(:company) { create :company }
     let(:user_id) { 213_689 }
-    let(:user) { create :user, :owner, id: user_id, company: company }
+    let(:user) { create :user, :manager, id: user_id, company: company }
     let(:initial_context) { { user: user, company: company } }
     let(:event) { :user_registered }
 

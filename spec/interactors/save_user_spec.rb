@@ -9,7 +9,7 @@ describe SaveUser do
             invited_by: current_user, first_name: first_name, company: company
     end
     let(:initial_context) { { user: user } }
-    let(:current_user) { create :user, :owner, company: company }
+    let(:current_user) { create :user, :manager, company: company }
     let(:company) { create :company }
     let(:first_name) { "Queen" }
 

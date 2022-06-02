@@ -10,7 +10,7 @@ describe InviteUser::BuildUser do
     }
   end
   let(:company) { create :company, bonus_amount: 100 }
-  let(:current_user) { create :user, :owner, company: company }
+  let(:current_user) { create :user, :manager, company: company }
   let(:expected_password) { "12345678" }
   let(:expected_invitation_token) { "abcd1234" }
 

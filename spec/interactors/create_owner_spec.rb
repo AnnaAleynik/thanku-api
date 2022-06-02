@@ -31,7 +31,7 @@ describe CreateOwner do
           first_name: "Bilbo",
           last_name: "Baggings",
           login: "login",
-          role: "owner",
+          role: "manager",
           company_id: company.id
         )
       end

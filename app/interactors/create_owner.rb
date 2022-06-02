@@ -4,7 +4,7 @@ class CreateOwner
   delegate :user_params, :company, to: :context
 
   def call
-    user_params.merge!(role: "owner", company: company)
+    user_params.merge!(role: "manager", company: company)
 
     context.user = User.new(user_params)
 
