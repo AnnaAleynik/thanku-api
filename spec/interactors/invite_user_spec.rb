@@ -12,7 +12,7 @@ describe InviteUser do
         role: "manager"
       }
     end
-    let(:current_user) { create :user, :owner, company: company }
+    let(:current_user) { create :user, :manager, company: company }
     let(:company) { create :company }
     let(:initial_context) do
       {

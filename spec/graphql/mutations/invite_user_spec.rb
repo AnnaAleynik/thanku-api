@@ -8,7 +8,7 @@ describe Mutations::InviteUser do
   let(:schema_context) { { current_user: current_user } }
   let(:invited_user) { User.last }
   let(:email) { "bilbo.baggins@shire.com" }
-  let(:current_user) { create :user, :owner }
+  let(:current_user) { create :user, :manager }
 
   let(:query) do
     <<-GRAPHQL

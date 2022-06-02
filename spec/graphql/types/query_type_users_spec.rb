@@ -6,7 +6,7 @@ describe Types::QueryType do
   let(:execution_context) { { context: { current_user: user } } }
   let(:schema_context) { { current_user: user } }
   let(:company) { create :company }
-  let(:user) { create :user, :owner, company: company }
+  let(:user) { create :user, :manager, company: company }
 
   before do
     create :employee, company: company
