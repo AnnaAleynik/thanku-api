@@ -2,7 +2,7 @@ name: Telegram notifications
 
 on:
   workflow_run:
-    workflows: [ Ruby on Rails CI ]
+    workflows: [ ci ]
     types: [ requested ]
 
 jobs:

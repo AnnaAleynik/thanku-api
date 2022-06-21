@@ -1,4 +1,4 @@
-name: Ruby on Rails CI
+name: ci
 on:
   push:
 jobs:
