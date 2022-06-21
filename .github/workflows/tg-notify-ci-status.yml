@@ -26,5 +26,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-           ${{ github.ref }} into ${{ github.repository }} with comment "${{ github.event.head_commit.message }}"
+          ${{ github.ref }} into ${{ github.repository }} with comment "${{ github.event.head_commit.message }}"
           has failes status on CI
