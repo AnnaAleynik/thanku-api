@@ -7,15 +7,6 @@ x-app: &app_base
   image: ${IMAGE_NAME}
   env_file:
     .env
-  environment:
-    - DATABASE_URL=postgres://postgres:password@db
-    - RAILS_ENV
-    - RACK_ENV
-    - DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL
-    - AUTH_SECRET_TOKEN
-    - MAILER_SENDER_ADDRESS
-    - PASSWORD_RECOVERY_LINK_TEMPLATE
-    - REDIS_URL
   build:
     context: .
     args:
@@ -34,11 +25,6 @@ services:
       - "5432:5432"
     volumes:
       - db-data:/var/lib/postgresql/data
-  mailcatcher:
-    image: yappabe/mailcatcher
-    ports:
-      - "1025:1025"
-      - "1080:1080"
   redis:
     image: redis:6.0-rc3-alpine
     sysctls:
@@ -47,8 +33,6 @@ services:
     <<: *app_base
     stdin_open: true
     tty: true
-    depends_on:
-      - mailcatcher
     ports:
       - "3000:3000"
     command: bin/docker-entrypoint
