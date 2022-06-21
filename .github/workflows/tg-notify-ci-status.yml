@@ -1,0 +1,31 @@
+name: Telegram notifications
+
+on:
+  workflow_run:
+    workflows: [ CI ]
+    types: [ completed ]
+    branches: [ main ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Push notify of succed status
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ${{ github.ref }} into ${{ github.repository }} with comment "${{ github.event.head_commit.message }}"
+          has success status on CI
+      
+    - name: PR notify
+      if: ${{ github.event_name == 'pull_request' }}
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+           ${{ github.ref }} into ${{ github.repository }} with comment "${{ github.event.head_commit.message }}"
+          has failes status on CI
