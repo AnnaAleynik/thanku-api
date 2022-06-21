@@ -3,4 +3,4 @@
 docker-compose -f docker-compose.yml -f docker-compose.test.yml up --detach --remove-orphans
 docker-compose exec app bin/rails db:schema:load
 docker-compose exec app bin/rspec ${@:-spec}
-docker-compose down
+docker-compose -f docker-compose.yml -f docker-compose.test.yml down
