@@ -4,13 +4,9 @@ x-app: &app_base
   depends_on:
     - db
     - redis
-  image: ${IMAGE_NAME}
   env_file:
     .env
-  build:
-    context: .
-    args:
-      - BUNDLER_VERSION=2.2.28
+  image: ghcr.io/annaaleynik/thanku-api:main
   links:
     - db
   volumes:

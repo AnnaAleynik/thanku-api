@@ -4,9 +4,9 @@ x-app: &app_base
   depends_on:
     - db
     - redis
-  image: ${IMAGE_NAME}
   env_file:
-    .env.test
+    .env
+  # image: ghcr.io/annaaleynik/thanku-api:main
   build:
     context: .
     args:
