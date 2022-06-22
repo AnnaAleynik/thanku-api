@@ -1,0 +1,45 @@
+name: Telegram Notification
+
+on:
+  status:
+  pull_request_review:
+    types: [ submitted ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send telegram message on push
+      if: ${{ github.event_name == 'push' }}
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ${{ github.actor }} created commit:
+          Commit message: ${{ github.event.commits[0].message }}
+          Changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+    - name: Send telegram message on pull_request approved
+      if: ${{ github.event_name == 'pull_request_review' }}
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ${{ github.actor }} approved pull request:
+          Repository: ${{ github.repository }}
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+    - name: Send telegram message on status of commit is error or failure
+      if: ${{ github.event_name != 'pull_request_review' && (github.event.state == 'error' || github.event.state == 'failure') }}
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+          Commit is failed!
+          Description: ${{ github.event.description }}
+          Repository: ${{ github.repository }}
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+          
