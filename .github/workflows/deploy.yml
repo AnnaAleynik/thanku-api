@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
+    steps:
+      - name: pull code
+        uses: actions/checkout@v2
+      - name: Docker compose up
+        run: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --remove-orphans
