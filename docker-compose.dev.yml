@@ -1,0 +1,30 @@
+version: "3.4"
+
+x-app: &app_base
+  depends_on:
+    - db
+    - redis
+  env_file:
+    .env
+  # image: ghcr.io/annaaleynik/thanku-api:main
+  build:
+    context: .
+    args:
+      - BUNDLER_VERSION=2.2.28
+  links:
+    - db
+  volumes:
+    - ruby-bundle:/usr/local/bundle
+
+services:
+  mailcatcher:
+    image: yappabe/mailcatcher
+    ports:
+      - "1025:1025"
+      - "1080:1080"
+  app:
+    <<: *app_base
+    stdin_open: true
+    tty: true
+    depends_on:
+      - mailcatcher

@@ -1,0 +1,13 @@
+version: "3.4"
+
+x-app: &app_base
+  depends_on:
+    - db
+    - redis
+  env_file:
+    .env
+  image: ghcr.io/annaaleynik/thanku-api:main
+  links:
+    - db
+  volumes:
+    - ruby-bundle:/usr/local/bundle
