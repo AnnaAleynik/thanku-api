@@ -7,7 +7,7 @@ on:
 
 jobs:
   notify:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Send telegram message on push
       if: ${{ github.event_name == 'push' }}
