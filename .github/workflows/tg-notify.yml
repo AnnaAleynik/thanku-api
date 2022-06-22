@@ -13,8 +13,8 @@ jobs:
       if: ${{ github.event_name == 'push' }}
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
+        to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           ${{ github.actor }} created commit:
           Commit message: ${{ github.event.commits[0].message }}
@@ -24,8 +24,8 @@ jobs:
       if: ${{ github.event_name == 'pull_request_review' }}
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
+        to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           ${{ github.actor }} approved pull request:
           Repository: ${{ github.repository }}
@@ -35,8 +35,8 @@ jobs:
       if: ${{ github.event_name != 'pull_request_review' && (github.event.state == 'error' || github.event.state == 'failure') }}
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
+        to: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           Commit is failed!
           Description: ${{ github.event.description }}
