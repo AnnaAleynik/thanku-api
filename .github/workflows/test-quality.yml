@@ -1,6 +1,7 @@
 name: Test Quality
 on:
   push:
+    
 jobs:
   test:
     runs-on: ubuntu-latest
