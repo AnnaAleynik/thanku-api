@@ -3,14 +3,13 @@ on:
   push:
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     services:
       postgres:
         image: postgres:12-alpine
         ports:
           - "5432:5432"
         env:
-          ImageOS: ubuntu18
           POSTGRES_DB: thanku-api_test
           POSTGRES_USER: rails
           POSTGRES_PASSWORD: password
