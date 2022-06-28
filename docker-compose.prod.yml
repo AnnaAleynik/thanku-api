@@ -11,3 +11,16 @@ x-app: &app_base
     - db
   volumes:
     - ruby-bundle:/usr/local/bundle
+
+services:
+   promtail:
+    image: grafana/promtail:1.4.1
+    volumes:
+      - promtail-data:/var/lib/promtail/positions
+      - $PWD/log/:/var/log
+      - ${PWD}/promtail/config.yml:/etc/promtail/promtail.yml
+    command:
+      - '-config.file=/etc/promtail/promtail.yml'
+
+volumes:
+  promtail-data:
